@@ -1,0 +1,43 @@
+<idea-plugin>
+  <id>com.mm.datealive</id>
+  <name>datealive</name>
+  <version>1.0</version>
+  <vendor email="1214194580@qq.com">mm</vendor>
+
+  <description><![CDATA[
+      Support quick generation of custom code, configure custom code in Tools ->DALconfig,
+      Right click on the editing window or use the shortcut keys alt+J to pop up the list,
+      and then enter 0-9 to select the corresponding label to generate the configured code
+      <br>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      none.<br>
+      <em></em>
+    ]]>
+  </change-notes>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/build-number-ranges.html for description -->
+  <idea-version since-build="177.0"/>
+
+  <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!--<typedHandler implementation="com.mm.datealive.MyTypedHandler"/>-->
+  </extensions>
+
+  <actions>
+        <action id="DALconfig" class="com.mm.datealive.ConfigAction" text="DALconfig" description="DALconfig">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+        <action id="datealive" class="com.mm.datealive.MyAction" text="DateALive"
+                description="alt j datealive">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt j"/>
+        </action>
+
+  </actions>
+
+</idea-plugin>
