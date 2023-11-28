@@ -105,10 +105,15 @@ public class ResourceUtils {
         itemUI.getName().setText(dataColumn1[index]);
         switch (no) {
             case "0":
-                itemUI.getName().setForeground(new Color(0x7B047B));
+                itemUI.getName().setForeground(new Color(0xFFBB02B9));
                 break;
             case "1":
-                itemUI.getName().setForeground(new Color(0xEEEEFA));
+                boolean isDarcula = UIManager.getLookAndFeel().getName().contains("Darcula");
+                if (isDarcula) {
+                    itemUI.getName().setForeground(new Color(0xEEEEFA));
+                } else {
+                    itemUI.getName().setForeground(new Color(0x03227D));
+                }
                 break;
             case "2":
                 itemUI.getName().setForeground(new Color(0x70707F));
